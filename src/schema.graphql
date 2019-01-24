@@ -1,0 +1,31 @@
+type Query {
+  me: User
+  items: [Item]
+  itemtypes: [ItemType]
+}
+
+type Mutation {
+  createItem(name: String!, description: String!, typeString: String!, url: String!): Item!
+}
+
+type Item {
+  id: String!
+  name: String
+  description: String
+  url: String
+  type: ItemType
+  owner: String
+  lastupdate: String
+}
+
+type ItemType {
+  id: Int!
+  name: String
+  description: String
+  items: [Item]
+}
+
+type User {
+  id: Int!
+  name: String
+}

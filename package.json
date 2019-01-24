@@ -1,0 +1,30 @@
+{
+  "name": "awgs-graphql",
+  "version": "0.0.1",
+  "description": "AWGS GraphQL Server",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist --copy-files",
+    "start": "npm run dev",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "István Koren",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.3.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-openid-connect": "^0.3.0",
+    "express-session": "^1.15.6",
+    "graphql": "^14.1.1",
+    "mysql2": "^1.6.4",
+    "openid-client": "^2.4.5",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.9"
+  }
+}
