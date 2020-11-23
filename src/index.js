@@ -67,6 +67,26 @@ const resolvers = {
         });
 
       });
+    },
+    updateItem: (parent, {id, name, description, typeString, url}, context) => {
+      return Item.findOne({where: {id: id}}).then(latestItem => {
+        
+        return ItemType.findOne({where: {name: typeString}}).then(itemtype => {
+          const type = itemtype.id;
+          latestItem.id = id;
+          latestItem.name = name;
+          latestItem.description = description;
+          latestItem.type = type;
+          latestItem.url = url;
+
+          return latestItem.save().then(item => {
+            item.lastupdate = Date.now();
+            return item;
+          });
+
+        });
+
+      });
     }
   },
   Item: {
