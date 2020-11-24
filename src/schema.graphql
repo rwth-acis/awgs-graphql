@@ -6,6 +6,7 @@ type Query {
 
 type Mutation {
   createItem(name: String!, description: String!, typeString: String!, url: String!): Item!
+  updateItem(id: String!, name: String!, description: String!, typeString: String!, url: String!): Item!
 }
 
 type Item {
